@@ -66,6 +66,7 @@ body {
 
 
 /* ============ COMPONENTS ===============*/
+
 .subtitle {
     font-weight: 500;
     font-size: 20px;
@@ -117,7 +118,7 @@ body {
 
 .social-list-link:hover,
 .social-list-link:focus {
-    background-color: #31D0AA;
+    background-color: var(--accent-color);
 }
 
 /*
@@ -132,8 +133,8 @@ body {
 }*/
 .subtitle-social {
     font-weight: 500;
-    font-size: 20px;
-    line-height: 1.2;
+    font-size: 16px;
+    line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--normal-color);
     margin-bottom: 16px;
@@ -146,7 +147,8 @@ body {
     padding-top: 24px;
     padding-bottom: 24px;
     background: var(--normal-color);
-    border-bottom: 1px solid #E7E9FC;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .page-header-container {
@@ -197,6 +199,7 @@ body {
 }
 
 .menu-item {
+    display: flex;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
@@ -217,9 +220,47 @@ body {
     color: var(--dark-color);
 }
 
+.active-studio::after {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 48px;
+    height: 4px;
+    border-radius: 2px;
+    /*bottom: -1px;
+    left: 0;*/
+    background-color: var(--accent-color);
+    margin-top: 20px;
+}
+
+.active-portfolio::after {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 66px;
+    height: 4px;
+    border-radius: 2px;
+    /*bottom: -1px;
+    left: 0;*/
+    background-color: var(--accent-color);
+    margin-top: 20px;
+}
+
+
+
+
+/*
+.active:hover,
+.active:focus {
+    color: transparent;
+}
+
+*/
+
 .menu-link:hover,
 .menu-link:focus {
     color: var(--accent-color);
+    display: block;
 }
 
 .page-contact {
@@ -289,7 +330,7 @@ font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
-    display: flex;
+    display: block;
     letter-spacing: 0.04em;
     color: var(--normal-color);
     background: var(--logo-accent-color);
@@ -297,9 +338,10 @@ font-style: normal;
     border-radius: 4px;
     margin-right: auto;
     margin-left: auto;
-    justify-content: center;
     border: 0px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
+
     
 .hero-button:hover,
 .hero-button:focus {
@@ -453,7 +495,7 @@ font-style: normal;
 
 .customers-link:hover,
 .customers-link:focus {
-    border: 1px solid var(--accent-color);
+    border-color: var(--accent-color);
 }
 
 .customers-link:hover .customers-logo,
@@ -506,6 +548,7 @@ font-style: normal;
     background: var(--second-normal-color);
     border: 1px solid #E7E9FC;
     border-radius: 4px;
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
     cursor: pointer;
 }
 
@@ -513,7 +556,7 @@ font-style: normal;
 .button-filter:focus {
     color: var(--normal-color);
     background-color: var(--accent-color);
-    border: 0px;
+    border-color: transparent;
 }
 
 /*.portfolio {
@@ -546,7 +589,8 @@ font-style: normal;
     flex-basis: calc((100% - 48px) / 3);
 }
 
-.portfolio-list-item:hover {
+.portfolio-img:hover,
+.portfolio-img:focus {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
